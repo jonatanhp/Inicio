@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.ListSelectionModel;
 import javax.swing.border.LineBorder;
 
-import util.MsgPanel;
+
 
 /**
  *
@@ -36,7 +36,7 @@ public class ClientesPanel extends javax.swing.JPanel {
         infoadic.setText("");
         guardarButton.setText("REGISTRAR");
         guardarButton.setToolTipText("REGISTRAR");
-        MsgPanel.error("");
+        
     }
 
     private void paintTable(ClientesTableModel tableModel) {
@@ -58,7 +58,7 @@ public class ClientesPanel extends javax.swing.JPanel {
 
             guardarButton.setText("MODIFICAR");
             guardarButton.setToolTipText("MODIFICAR");
-            MsgPanel.error("");
+            
         }
 
     }
@@ -92,7 +92,7 @@ public class ClientesPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         nombres = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        msgPanel1 = new util.MsgPanel();
+        
         jScrollPane1 = new javax.swing.JScrollPane();
         infoadic = new javax.swing.JTextArea();
         jPanel5 = new javax.swing.JPanel();
@@ -232,7 +232,7 @@ public class ClientesPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Info adic:");
 
-        msgPanel1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        
 
         infoadic.setColumns(20);
         infoadic.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -255,13 +255,12 @@ public class ClientesPanel extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(msgPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(msgPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(nombres, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -421,7 +420,7 @@ public class ClientesPanel extends javax.swing.JPanel {
         if (nombres.getText().trim().isEmpty()) {
             nombres.requestFocus();
             nombres.setBorder(new LineBorder(new java.awt.Color(255, 0, 0), 3));
-            MsgPanel.error("Nombre es requerido", true);
+            
 
         } else {
             Cliente s = new Cliente();
@@ -437,7 +436,7 @@ public class ClientesPanel extends javax.swing.JPanel {
                         if (returnId != 0) {
                             paintTable(new ClientesTableModel());
                             resetForm();
-                            MsgPanel.success(" Se ha modificado a:" + s.getNombres());
+                            
                         }
                     }
                 } catch (Exception ex) {
@@ -451,7 +450,7 @@ public class ClientesPanel extends javax.swing.JPanel {
                         // s.setId(returnId);//necesitamos subir el id, ya no
                         //tableModel.addRow(s);
                         resetForm();
-                        MsgPanel.success("Se ha registrado a:" + s.getNombres());
+                        
                     }
                 } catch (Exception ex) {
                     JOptionPane.showMessageDialog(null, "No se puede insertar: " + ex.getMessage());
@@ -492,7 +491,7 @@ public class ClientesPanel extends javax.swing.JPanel {
                         //tableModel.removeRow(table.getSelectedRow());
                         paintTable(new ClientesTableModel());
                         resetForm();
-                        MsgPanel.success("Se ha eliminado a:" + fila.getNombres());
+                        
                     }
                 }
             } catch (Exception ex) {
@@ -518,10 +517,10 @@ public class ClientesPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (!nombres.getText().trim().isEmpty()) { //reset
             nombres.setBorder(new LineBorder(new java.awt.Color(0, 0, 0), 1));
-            MsgPanel.error("");
+            
         } else {
             nombres.setBorder(new LineBorder(new java.awt.Color(255, 0, 0), 3));
-            MsgPanel.error("Nombre es requerido", true);
+            
         }
     }//GEN-LAST:event_nombresKeyReleased
 
@@ -549,7 +548,7 @@ public class ClientesPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
-    private util.MsgPanel msgPanel1;
+    
     private javax.swing.JTextField nombres;
     private igu.util.buttons.TheButton nuevoButton;
     private javax.swing.JTable table;

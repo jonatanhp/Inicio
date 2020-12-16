@@ -22,22 +22,23 @@ import util.ErrorLogger;
  */
 public class ClienteData {
      static Connection cn = Conn.connectSQLite();
-    static PreparedStatement ps;
+    static PreparedStatement ps;  //Statement= Sentencia  -  PreparedStatement=Sentencia Preparada (cuando no conozco el valor del dato a ingresar)
     static ErrorLogger log = new ErrorLogger(ClienteData.class.getName());
 
     public static int create(Cliente d) {
         int rsId = 0;
         String[] returns = {"id"};
-        String sql = "INSERT INTO cliente(nombres, infoadic) "
-                + "VALUES(?,?)";
+        String sql = "INSERT INTO Cliente(nombres, telefono, dni) "
+                + "VALUES(?,?,?)";
         int i = 0;
         try {
             ps = cn.prepareStatement(sql, returns);
             ps.setString(++i, d.getNombres());
-            ps.setString(++i, d.getInfoadic());
+            ps.setString(++i, d.getTelefono());
+            ps.setString(++i, d.getDni());
             rsId = ps.executeUpdate();// 0 no o 1 si commit
-            try (ResultSet rs = ps.getGeneratedKeys()) {
-                if (rs.next()) {
+            try (ResultSet rs = ps.getGeneratedKeys()) { //resulset=tabla virtual que es el reflejo de mi tabla en la base de datos
+                if (rs.next()) { //next=siguiente (si es que existe un siguiente registro)
                     rsId = rs.getInt(1); // select tk, max(id)  from cliente
                     //System.out.println("rs.getInt(rsId): " + rsId);
                 }
@@ -45,7 +46,7 @@ public class ClienteData {
             }
         } catch (SQLException ex) {
             //System.err.println("create:" + ex.toString());
-            log.log(Level.SEVERE, "create", ex);
+            
         }
         return rsId;
     }

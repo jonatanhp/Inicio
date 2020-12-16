@@ -7,7 +7,7 @@ package data;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.SQLException;   //para evitar errores en caso de que el archivo de base de datos no se encuentre
 import javax.swing.JOptionPane;
 
 /**
@@ -23,7 +23,7 @@ public class Conn {
         Connection conn = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            String dbURL = "jdbc:sqlite:goldes_db.db?foreign_keys=on;";
+            String dbURL = "jdbc:sqlite:inicio.db?foreign_keys=on;";
             
             conn = DriverManager.getConnection(dbURL);
             

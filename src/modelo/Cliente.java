@@ -9,10 +9,12 @@ package modelo;
  *
  * @author jonatan
  */
-public class Cliente {
+public class Cliente {  //instanciar=crear cliente con valor en sus variables o atributos)
     private int id;
     private String nombres;
-    private String infoadic;
+    private String telefono;
+    private String dni;
+    
     
     public Cliente() {
     }
@@ -40,11 +42,18 @@ public class Cliente {
         this.nombres = nombres;
     }
 
-    public String getInfoadic() {
-        return infoadic;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setInfoadic(String infoadic) {
-        this.infoadic = infoadic;
+    public void setTelefono(String infoadic) {
+        this.telefono = infoadic;
+    }
+    
+    public String getDni(){
+        return dni;
+    }
+    public void setDni(String ingresardni){
+        this.dni=ingresardni;
     }
 }

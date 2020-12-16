@@ -15,8 +15,9 @@ public class Venta {
      private int id;
     private int clie_id;
     private String clie_nom;
-     private int esdolares;
-    private int activo;
+    private String producto_id;
+    private String producto_nombre;
+     
     private Date date_created;
     private Date last_updated;
 
@@ -43,14 +44,21 @@ public class Venta {
     public void setClie_nom(String clie_nom) {
         this.clie_nom = clie_nom;
     }
-
-    public int getActivo() {
-        return activo;
+    public String getProductoId(){
+        return producto_id;
     }
-
-    public void setActivo(int activo) {
-        this.activo = activo;
+    public void setProductoId(String id){
+        this.producto_id=id;
     }
+      public String getProductoNombre(){ 
+        return producto_nombre;
+    }
+    public void setProductoNombre(String id){
+        this.producto_id=id;
+    }
+    
+    
+   
 
     public Date getDate_created() {
         return date_created;
@@ -68,11 +76,5 @@ public class Venta {
         this.last_updated = last_updated;
     }
 
-    public int getEsdolares() {
-        return esdolares;
-    }
-
-    public void setEsdolares(int esdolares) {
-        this.esdolares = esdolares;
-    }
+    
 }
