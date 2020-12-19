@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author jonatan
  */
-public class Venta {
+public class Compra {
      private int id;
     private int clie_id;
     private String clie_nom;

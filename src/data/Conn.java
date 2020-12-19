@@ -5,8 +5,8 @@
  */
 package data;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.Connection; //obligarorio para conectarse a una base de datos
+import java.sql.DriverManager;  //obligatorio para manejar o gestionar los drivers
 import java.sql.SQLException;   //para evitar errores en caso de que el archivo de base de datos no se encuentre
 import javax.swing.JOptionPane;
 

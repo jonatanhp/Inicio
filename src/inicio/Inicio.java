@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package inicio;
-
+import modelo.Cliente;
 /**
  *
  * @author jonatan
@@ -16,6 +16,14 @@ public class Inicio {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Cliente cliente1=new Cliente();
+        cliente1.setId(1);
+        cliente1.setNombres("Juan");
+        cliente1.setDni("74646");
+        
+        
+        System.out.println(cliente1.getNombres());
+        
     }
     
 }

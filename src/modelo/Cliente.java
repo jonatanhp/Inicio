@@ -12,12 +12,14 @@ package modelo;
 public class Cliente {  //instanciar=crear cliente con valor en sus variables o atributos)
     private int id;
     private String nombres;
-    private String telefono;
+    
     private String dni;
     
     
     public Cliente() {
     }
+    
+    
     public Cliente(String nombres) {
         this.nombres= nombres;
        
@@ -42,13 +44,7 @@ public class Cliente {  //instanciar=crear cliente con valor en sus variables o 
         this.nombres = nombres;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String infoadic) {
-        this.telefono = infoadic;
-    }
+   
     
     public String getDni(){
         return dni;
